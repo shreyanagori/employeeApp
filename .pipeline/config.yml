@@ -1,6 +1,6 @@
 ---
 general:
-  buildTool: "mta"
+  buildTool: 
 stages:
   Build:
     npmExecuteLint: false
