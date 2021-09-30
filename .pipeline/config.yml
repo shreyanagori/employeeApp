@@ -1,0 +1,29 @@
+---
+general:
+  buildTool: "mta"
+stages:
+  Build:
+    npmExecuteLint: false
+  Additional Unit Tests:
+    npmExecuteScripts: false
+    karmaExecuteTests: false
+  Malware Scan:
+    malwareExecuteScan: true
+  Acceptance:
+    cloudFoundryDeploy: false
+    uiVeri5ExecuteTests: false
+  Release:
+    cloudFoundryDeploy: true
+    cfApiEndpoint: "https://api.cf.us10.hana.ondemand.com"
+    cfOrg: "36c330d5trial"
+    cfSpace: "dev"
+    cfCredentialsId: "cd-dev-subaccount"
+    tmsUpload: true
+steps:
+  artifactPrepareVersion:
+    versioningType: "cloud_noTag"
+  cloudFoundryDeploy:
+    mtaDeployParameters: "-f --version-rule ALL"
+  tmsUpload:
+    nodeName: "QA"
+    credentialsId: "std-skey"
