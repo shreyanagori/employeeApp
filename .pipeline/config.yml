@@ -1,6 +1,6 @@
 ---
 general:
-  buildTool: $PIPER_buildTool
+  buildTool: npm
 stages:
   Build:
     npmExecuteLint: false
