@@ -1,6 +1,6 @@
 ---
 general:
-  buildTool: npm
+  pipeline: "sap-ui5-cf"
 stages:
   Build:
     npmExecuteLint: false
