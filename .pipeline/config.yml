@@ -22,6 +22,7 @@ stages:
 steps:
   artifactPrepareVersion:
     versioningType: "cloud_noTag"
+  mtaBuild:
   cloudFoundryDeploy:
     mtaDeployParameters: "-f --version-rule ALL"
   tmsUpload:
